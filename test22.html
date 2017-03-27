@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="data">
+<input type="text" id="data2">
+
+<button onclick="myFunction()">Click me</button>
+<p>Table A</P>
+<table>
+<th>Name</th>
+<th>age</th>
+<tbody id="tt">
+<tbody>
+</table>
+
+<p>Table B</P>
+<table>
+<th>Name</th>
+<th>age</th>
+<tbody id="ttt1">
+<tbody>
+</table>
+
+<script>
+var ttt=[];
+var ttt2=[];
+function myFunction() {
+
+  
+ var a= document.getElementById("data").value;
+ var b = document.getElementById("data2").value;
+ if(b=="a")
+ {
+	ttt.push(a)
+	ttt.push(b)
+ 
+ }else{
+
+	ttt2.push(a)
+	ttt2.push(b)
+
+} 
+var table='';
+var table2='';
+var bb=''
+				  for (var i=0;i<ttt.length;i=i+2)
+				  {
+				  
+
+					
+					
+					var bb="<tr><td>"+ttt[i]+"<td><td>"+ttt[i+1]+"<td></tr>";
+					 
+					table=table+bb;
+					
+									}
+					  for (var i=0;i<ttt2.length;i=i+2)
+				  {
+				  
+
+					
+					
+					var bb="<tr><td>"+ttt2[i]+"<td><td>"+ttt2[i+1]+"<td></tr>";
+					 
+					table2=table2+bb;
+					
+					}
+	document.getElementById("tt").innerHTML = table;
+	document.getElementById("ttt1").innerHTML = table2;
+}
+</script>
+
+</body>
+</html>
