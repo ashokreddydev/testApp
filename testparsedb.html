@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Parse.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parse/1.9.2/parse.min.js"></script>
+<body>
+
+
+
+<button onclick="myFunction()">Click me</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+ Parse.initialize('YPPlAP7skLPweDZSALMR');
+Parse.serverURL = 'https://sampleforparseserver.herokuapp.com/parse';
+
+var obj = new Parse.Object('UserData');
+obj.set('Fname',"Ashok");
+obj.set('Lname',"Reddy");
+obj.set('age',23);
+obj.set('phone',9491538125);
+
+obj.save().then(function(obj) {
+  console.log(obj.toJSON());
+ <!--  var query = new Parse.Query('GameScore'); -->
+ <!--  query.get(obj.id).then(function(objAgain) { -->
+   <!-- console.log("DATA:"+objAgain.toJSON()); -->
+ <!--  }, function(err) {console.log(err); }); -->
+}, function(err) { console.log(err); });
+	
+	
+	
+}
+</script>
+
+</body>
+</html>
